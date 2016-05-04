@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20160504182314) do
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.integer  "max_allowed_hours"
-    t.integer  "developer_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end

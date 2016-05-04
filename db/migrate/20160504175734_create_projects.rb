@@ -3,7 +3,6 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       t.string :name
       t.integer :max_allowed_hours
-      t.integer :developer_id
 
       t.timestamps null: false
     end
