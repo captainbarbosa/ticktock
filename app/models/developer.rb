@@ -1,4 +1,7 @@
 class Developer < ActiveRecord::Base
+  has_many :time_entries
+  has_many :projects, through: :time_entries
+
   validates :email, presence: :true, uniqueness: true
   validates :password, confirmation: true
 

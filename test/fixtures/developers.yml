@@ -1,10 +1,10 @@
-one:
+dev_1:
   email: dev1@email.com
   password_hash: <%= BCrypt::Password.create("very_secret") %>
   first_name: Devon
   last_name: Developer
 
-two:
+dev_2:
   email: dev2@email.com
   password_hash: <%= BCrypt::Password.create("super_secret") %>
   first_name: Coraline

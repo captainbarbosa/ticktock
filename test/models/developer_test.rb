@@ -6,7 +6,7 @@ class DeveloperTest < ActiveSupport::TestCase
   end
 
   test "developer has email and password" do
-    developer = developers(:one)
+    developer = developers(:dev_1)
 
     assert_equal "dev1@email.com", developer.email
   end

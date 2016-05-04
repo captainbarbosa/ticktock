@@ -1,0 +1,8 @@
+final_project:
+  name: "Final Project"
+  max_allowed_hours: 100
+
+
+time_tracking_app:
+  name: "Time Tracking App"
+  max_allowed_hours: 50
