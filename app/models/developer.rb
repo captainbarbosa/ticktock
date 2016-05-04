@@ -7,7 +7,7 @@ class Developer < ActiveRecord::Base
     BCrypt::Password.new(password_hash)
   end
 
-  # Set user's password
+  # Write user password to DB
   def password=(password)
     @password = BCrypt::Password.create(password)
     self.password_hash = @password
