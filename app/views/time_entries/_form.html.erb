@@ -1,3 +1,13 @@
+<% if @time_entry.errors.any? %>
+    <strong><%= pluralize(@time_entry.errors.count, "error") %> prohibited this time entry from being saved:</strong>
+
+    <ul>
+      <% @time_entry.errors.full_messages.each do |message| %>
+        <li><%= message %></l1>
+      <% end %>
+    </ul>
+<% end %>
+
 <%= form_for @time_entry do |f| %>
   <%= f.label :subject %>
   <%= f.text_field :subject %>
@@ -19,16 +29,7 @@
         {}
       ) %>
 
-      <%= f.label :developer %><br>
-        <%= f.select(
-          :developer_id,
-          options_from_collection_for_select(
-          Developer.all,
-          :id,
-          :first_name
-          ),
-          {}
-        ) %>
+ <%= f.hidden_field :developer_id %>
 
  <%= f.submit %>
 

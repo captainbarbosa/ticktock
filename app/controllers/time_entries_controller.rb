@@ -2,7 +2,7 @@ class TimeEntriesController < ApplicationController
   before_action :authenticate!
 
   def index
-    @time_entries = TimeEntry.all
+    @time_entries = current_user.time_entries
   end
 
   def show
@@ -15,12 +15,27 @@ class TimeEntriesController < ApplicationController
   end
 
   def create
-    @time_entry = TimeEntry.create!(time_entry_params)
-    redirect_to time_entries_path, notice: "Time entry added"
+    @time_entry = TimeEntry.new(time_entry_params)
+
+    respond_to do |format|
+      if @time_entry.save
+        format.html { redirect_to time_entries_path, notice: "Time entry added!" }
+      else
+        format.html { render :new }
+      end
+    end
   end
 
   def edit
     @time_entry = TimeEntry.find(params[:id])
+
+    respond_to do |format|
+      if @time_entry.save
+        format.html { redirect_to time_entries_path, notice: "Time entry added!" }
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   def update
@@ -31,7 +46,7 @@ class TimeEntriesController < ApplicationController
 
   def destroy
     TimeEntry.find(params[:id]).destroy
-    redirect_to root_path, notice: "Time entry deleted"
+    redirect_to time_entries_path, notice: "Time entry deleted"
   end
 
   private

@@ -14,8 +14,15 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.create!(project_params)
-    redirect_to root_path, notice: "Project added"
+    @project = Project.new(project_params)
+
+    respond_to do |format|
+      if @project.save
+        format.html { redirect_to projects_path, notice: "Project added!" }
+      else
+        format.html { render :new }
+      end
+    end
   end
 
   def edit
@@ -24,13 +31,19 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    @project.update(project_params)
-    redirect_to developer_path(@project), notice: "Project updated"
+
+    respond_to do |format|
+      if @project.update(project_params)
+        format.html { redirect_to projects_path, notice: "Project edited!" }
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   def destroy
     Project.find(params[:id]).destroy
-    redirect_to root_path, notice: "Project deleted"
+    redirect_to projects_path, notice: "Project deleted"
   end
 
   private

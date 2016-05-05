@@ -1,1 +1,11 @@
 <h1>Time Entries</h1>
+
+<%= link_to "Add time entry", new_time_entry_path %>
+<br>
+<% @time_entries.each do |time_entry| %>
+  <%= time_entry.id %>
+  <%= time_entry.subject %>
+  <%= link_to "Edit", edit_time_entry_path(time_entry) %>
+  <%= link_to "Delete", time_entry, method: :delete %>
+  <br>
+<% end %>
