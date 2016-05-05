@@ -1,0 +1,35 @@
+<%= form_for @time_entry do |f| %>
+  <%= f.label :subject %>
+  <%= f.text_field :subject %>
+
+  <%= f.label :start_time %>
+  <%= f.datetime_select :start_time %>
+
+  <%= f.label :end_time %>
+  <%= f.datetime_select :end_time %>
+
+  <%= f.label :project %><br>
+      <%= f.select(
+        :project_id,
+        options_from_collection_for_select(
+        Project.all,
+        :id,
+        :name
+        ),
+        {}
+      ) %>
+
+      <%= f.label :developer %><br>
+        <%= f.select(
+          :developer_id,
+          options_from_collection_for_select(
+          Developer.all,
+          :id,
+          :first_name
+          ),
+          {}
+        ) %>
+
+ <%= f.submit %>
+
+<% end %>

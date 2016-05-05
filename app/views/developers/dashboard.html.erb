@@ -1,6 +1,12 @@
 <h1>Dashboard</h1>
 
+<%= link_to "Log in", login_path %>
+
 <%= link_to "Add Developer", new_developer_path %>
+<%= link_to "Add Project", new_project_path %>
+<%= link_to "Add Time Entry", new_time_entry_path %>
+
+
 
 <% @developers.each do |developer| %>
   <%= link_to developer.id, developer_path(developer) %>
