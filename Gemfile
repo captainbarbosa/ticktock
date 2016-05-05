@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'pry'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -40,8 +42,8 @@ group :development, :test do
 end
 
 group :test do
-  gem 'pry'
   gem 'better_errors'
+  gem 'minitest-focus'
 end
 
 group :development do

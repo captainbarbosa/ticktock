@@ -1,4 +1,6 @@
 class DevelopersController < ApplicationController
+  before_action :authenticate!
+
   def dashboard
     @developers = Developer.all
   end
