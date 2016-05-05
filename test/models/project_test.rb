@@ -4,12 +4,10 @@ class ProjectTest < ActiveSupport::TestCase
   test "project model exists" do
     assert Developer
   end
-
-  test "project has name & max number of allowed hours" do
-    project = projects(:final_project)
-
-    assert_equal "Final Project", project.name
-    assert_equal 100, project.max_allowed_hours
+  
+  test "project must have name & max number of allowed hours" do
+    assert_equal false, projects(:project_without_name).valid?
+    assert_equal false, projects(:project_without_hours).valid?
   end
 
   test "project can have many time entries" do

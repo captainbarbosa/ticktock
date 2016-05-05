@@ -6,3 +6,9 @@ final_project:
 time_tracking_app:
   name: "Time Tracking App"
   max_allowed_hours: 50
+
+project_without_name:
+  max_allowed_hours: 50
+
+project_without_hours:
+  name: "The invalid project"

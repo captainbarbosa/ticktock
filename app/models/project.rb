@@ -6,4 +6,8 @@ class Project < ActiveRecord::Base
   def overtime?
     true unless self.hours_worked > self.max_allowed_hours
   end
+
+  def no_time_entries?
+    true unless self.time_entries == []
+  end
 end

@@ -5,9 +5,9 @@ class TimeEntryTest < ActiveSupport::TestCase
     assert TimeEntry
   end
 
-  test "time entry has a subject" do
-    time_entry = time_entries(:time_entry_one)
-    assert_equal "Planning database structure", time_entry.subject
+  test "time entries must have subject & project_id" do
+    assert_equal false, time_entries(:time_entry_without_subject).valid?
+    assert_equal false, time_entries(:time_entry_without_project_id).valid?
   end
 
   test "time entry belongs to a developer" do

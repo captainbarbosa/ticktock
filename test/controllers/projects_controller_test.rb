@@ -11,6 +11,6 @@ class ProjectsControllerTest < ActionController::TestCase
         max_allowed_hours: 200 }
     end
 
-    assert_redirected_to root_path
+    assert_redirected_to projects_path
   end
 end

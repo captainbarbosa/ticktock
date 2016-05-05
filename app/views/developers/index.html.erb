@@ -8,5 +8,8 @@
   <%= developer.first_name %> <%= developer.last_name %>
   <%= link_to "Edit", edit_developer_path(developer) %>
   <%= link_to "Delete", developer, method: :delete unless developer.no_time_entries? %>
+  <%= developer.weekly_hours %>
+  <%= developer.overtime? %>
+  <%= developer.overtime_by %>
   <br>
 <% end %>

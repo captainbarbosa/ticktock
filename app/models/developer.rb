@@ -4,6 +4,7 @@ class Developer < ActiveRecord::Base
 
   validates :email, presence: :true, uniqueness: true
   validates :password, confirmation: true
+  validates :first_name, :last_name, presence: :true
 
   # Read users password
   def password
@@ -17,6 +18,18 @@ class Developer < ActiveRecord::Base
   end
 
   def no_time_entries?
-    true unless self.time_entries == []
+    time_entries.empty?
+  end
+
+  def weekly_hours
+    self.time_entries.where('created_at >= ?', 1.week.ago).sum(:duration)
+  end
+
+  def overtime?
+    true unless self.weekly_hours < 40
+  end
+
+  def overtime_by
+    weekly_hours - 40 if self.overtime?
   end
 end

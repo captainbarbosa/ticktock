@@ -9,3 +9,30 @@ dev_2:
   password_hash: <%= BCrypt::Password.create("super_secret") %>
   first_name: Coraline
   last_name: Coder
+
+developer_without_first_name:
+  email: person@email.com
+  password_hash: <%= BCrypt::Password.create("password") %>
+  last_name: McPerson
+
+developer_without_last_name:
+  email: person@email.com
+  password_hash: <%= BCrypt::Password.create("password") %>
+  first_name: Person
+
+developer_without_email:
+  password_hash: <%= BCrypt::Password.create("password") %>
+  first_name: Person
+  last_name: McPerson
+
+developer_without_password:
+  email: person@email.com
+  password_hash: <%= BCrypt::Password.create("") %>
+  first_name: Person
+  last_name: McPerson
+
+developer_with_no_time_entries:
+  email: person@email.com
+  password_hash: <%= BCrypt::Password.create("Password") %>
+  first_name: Person
+  last_name: McPerson

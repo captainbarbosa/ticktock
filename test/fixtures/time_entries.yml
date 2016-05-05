@@ -1,13 +1,21 @@
 time_entry_one:
   subject: "Planning database structure"
-  start_time: 2016-11-11 18:43:19 UTC
-  end_time: 2016-11-22 18:43:19 UTC
   project: final_project
   developer: dev_1
+  duration: 41
 
 time_entry_two:
   subject: "Style views"
-  start_time: 2016-12-12 18:43:19 UTC
-  end_time: 2016-12-22 18:43:19 UTC
   project: final_project
   developer: dev_2
+  duration: 2
+
+time_entry_without_subject:
+  project: final_project
+  developer: dev_2
+  duration: 2
+
+time_entry_without_project_id:
+  subject: "Style views"
+  developer: dev_2
+  duration: 2

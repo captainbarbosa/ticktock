@@ -12,6 +12,7 @@ class TimeEntriesController < ApplicationController
   def new
     @time_entry = TimeEntry.new
     @time_entry.developer_id = current_user.id
+    # @time_entry.duration = @time_entry.calculate_duration
   end
 
   def create
@@ -52,6 +53,6 @@ class TimeEntriesController < ApplicationController
   private
 
   def time_entry_params
-    params.require(:time_entry).permit(:subject, :start_time, :end_time, :project_id, :developer_id)
+    params.require(:time_entry).permit(:subject, :duration, :project_id, :developer_id)
   end
 end
