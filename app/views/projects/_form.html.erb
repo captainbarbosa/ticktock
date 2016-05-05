@@ -1,0 +1,10 @@
+<%= form_for @project do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :max_allowed_hours %>
+  <%= f.text_field :max_allowed_hours %>
+
+ <%= f.submit %>
+
+<% end %>
