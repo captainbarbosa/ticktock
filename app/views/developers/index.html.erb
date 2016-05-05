@@ -1,3 +1,12 @@
 <h1>Developers#Index</h1>
 
 <%= link_to "Add Time Entry", new_time_entry_path %>
+
+<br>
+
+<% @developers.each do |developer| %>
+  <%= developer.first_name %> <%= developer.last_name %>
+  <%= link_to "Edit", edit_developer_path(developer) %>
+  <%= link_to "Delete", developer, method: :delete unless developer.no_time_entries? %>
+  <br>
+<% end %>

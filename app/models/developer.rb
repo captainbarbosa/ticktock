@@ -15,4 +15,8 @@ class Developer < ActiveRecord::Base
     @password = BCrypt::Password.create(password)
     self.password_hash = @password
   end
+
+  def no_time_entries?
+    true unless self.time_entries == []
+  end
 end
