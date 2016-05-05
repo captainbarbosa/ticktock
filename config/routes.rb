@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
   root 'developers#dashboard'
+
+  get "login" => "login#new"
+  get "login/show" => "login#show"
+  post "login" => "login#create"
+  delete "logout" => "login#destroy", as: "logout"
+
+  get "signup" => "signup#new"
+  post "signup" => "signup#create"
+
   resources :developers
   resources :projects
   resources :time_entries
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
