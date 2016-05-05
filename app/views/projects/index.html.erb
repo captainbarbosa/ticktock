@@ -5,6 +5,8 @@
 <% @projects.each do |project| %>
   <%= project.id %>
   <%= project.name %>
+  <%= project.hours_worked %>
+  <%= project.overtime? %>
   <%= link_to "Edit", edit_project_path(project) %>
   <%= link_to "Delete", project, method: :delete %>
   <br>
