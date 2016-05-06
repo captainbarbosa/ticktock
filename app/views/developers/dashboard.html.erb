@@ -1,13 +1,17 @@
-<h1>Dashboard</h1>
+<div class="jumbotron">
+  <h1>TickTock</h1>
+    <div class="dashboard-icon-group">
+      <%= fa_icon "users 4x" %>
+      <h4>Build your team</h4>
+    </div>
 
-<%= link_to "Log in", login_path %>
+    <div class="dashboard-icon-group">
+      <%= fa_icon "file-code-o 4x" %>
+      <h4>Add your projects</h4>
+    </div>
 
-<%= link_to "Add Developer", new_developer_path %>
-<%= link_to "Add Project", new_project_path %>
-<%= link_to "Add Time Entry", new_time_entry_path %>
-
-
-
-<% @developers.each do |developer| %>
-  <%= link_to developer.id, developer_path(developer) %>
-<% end %>
+    <div class="dashboard-icon-group">
+      <%= fa_icon "clock-o 4x" %>
+      <h4>Track your time</h4>
+    </div>
+</div>
