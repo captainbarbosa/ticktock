@@ -16,3 +16,35 @@
  /*
  *= require font-awesome
  */
+
+.navbar {
+  /* not supposed to use !important but time constraints exist - fix later */
+  border-radius: 0 !important;
+}
+
+.centered-headline {
+  text-align: center;
+  padding: 20px 0px;
+}
+
+.dropdown-toggle:hover, .dropdown-open, .action-links-dropdown {
+  /* not supposed to use !important but time constraints exist - fix later */
+  background-color: rgba(44, 62, 80, 0) !important;
+  color: #7B8A8B !important;
+  text-decoration: none !important;
+}
+
+.index-table-container {
+  width: 80%;
+  margin: auto;
+  padding-top: 100px;
+}
+
+.table-header, .table-row {
+  text-align: center;
+  font-size: 16px;
+}
+
+.table-cell {
+  vertical-align: middle;
+}

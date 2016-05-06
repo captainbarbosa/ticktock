@@ -1,15 +1,38 @@
-<h1>Developers#Index</h1>
+<h1 class="centered-headline">Developers</h1>
 
-<%= link_to "Add Time Entry", new_time_entry_path %>
+<a href="/time_entries/new" class="btn btn-success col-sm-offset-5 col-sm-2 text-center">Add Developer</a>
 
-<br>
-
-<% @developers.each do |developer| %>
-  <%= developer.first_name %> <%= developer.last_name %>
-  <%= link_to "Edit", edit_developer_path(developer) %>
-  <%= link_to "Delete", developer, method: :delete unless developer.no_time_entries? %>
-  <%= developer.weekly_hours %>
-  <%= developer.overtime? %>
-  <%= developer.overtime_by %>
-  <br>
-<% end %>
+<div class="index-table-container">
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th class="table-header">Developer</th>
+      <th class="table-header">Hours Worked This Week</th>
+      <th class="table-header">Projects</th>
+      <th class="table-header">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @developers.each do |developer| %>
+      <tr class="<%= 'warning' if developer.overtime? %> table-row">
+        <td class="table-cell"><%= developer.first_name %> <%= developer.last_name %></td>
+        <td class="table-cell"><%= developer.weekly_hours %></td>
+        <td class="table-cell"><%= developer.projects.count %></td>
+        <td>
+          <ul class="nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle action-links-dropdown" id="button" data-toggle="dropdown" href="#" aria-expanded="false">
+                Actions <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><%= link_to "Edit", edit_developer_path(developer) %></a></li>
+                <li><a href="#"><%= link_to "Delete", developer, method: :delete unless developer.no_time_entries? %></a></li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
