@@ -15,6 +15,10 @@ time_entry_without_subject:
   developer: dev_2
   duration: 2
 
+time_entry_without_duration:
+  project: final_project
+  developer: dev_2
+
 time_entry_without_project_id:
   subject: "Style views"
   developer: dev_2

@@ -5,7 +5,8 @@ class TimeEntryTest < ActiveSupport::TestCase
     assert TimeEntry
   end
 
-  test "time entries must have subject & project_id" do
+  test "time entries must have subject, duration, & project_id" do
+    assert_equal false, time_entries(:time_entry_without_duration).valid?
     assert_equal false, time_entries(:time_entry_without_subject).valid?
     assert_equal false, time_entries(:time_entry_without_project_id).valid?
   end
