@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ProjectsControllerTest < ActionController::TestCase
-  test "adding a new project redirects to root path" do
+  test "adding a new project" do
     @user = developers(:dev_1)
     session[:user_id] = @user.id
 

@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class DevelopersControllerTest < ActionController::TestCase
-  test "adding a new developer redirects to root path" do
+  test "adding a new developer" do
     @user = developers(:dev_1)
     session[:user_id] = @user.id
 
