@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "signup" => "signup#new"
   post "signup" => "signup#create"
 
-  resources :developers
+  resources :developers, :only => [:dashboard, :index, :new, :create, :edit, :update, :destroy]
   resources :projects
   resources :time_entries
 

@@ -19,7 +19,7 @@
         <% else %>
           <tr>
         <% end %>
-          <td class="table-cell"><%= project.name %></td>
+          <td class="table-cell"><%= link_to project.name, project_path(project) %></td>
           <td class="table-cell"><%= project.hours_worked %></td>
           <td class="table-cell"><%= project.max_allowed_hours %></td>
           <td>
