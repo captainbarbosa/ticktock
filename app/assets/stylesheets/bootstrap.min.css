@@ -3563,7 +3563,6 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 .navbar {
     position: relative;
     min-height: 60px;
-    margin-bottom: 21px;
     border: 1px solid transparent
 }
 @media (min-width:768px) {
@@ -4317,10 +4316,8 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
     color: #2c3e50
 }
 .alert {
-    padding: 15px;
     margin-bottom: 21px;
     border: 1px solid transparent;
-    border-radius: 4px
 }
 .alert h4 {
     margin-top: 0;
@@ -4334,9 +4331,6 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 }
 .alert>p+p {
     margin-top: 5px
-}
-.alert-dismissable, .alert-dismissible {
-    padding-right: 35px
 }
 .alert-dismissable .close, .alert-dismissible .close {
     position: relative;

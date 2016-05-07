@@ -1,14 +1,18 @@
-<% if @developer.errors.any? %>
-    <strong><%= pluralize(@developer.errors.count, "error") %> prohibited this developer from being saved:</strong>
-
-    <ul>
-      <% @developer.errors.full_messages.each do |message| %>
-        <li><%= message %></l1>
-      <% end %>
-    </ul>
-<% end %>
-
 <div class="form-container">
+  <% if @developer.errors.any? %>
+    <div class="row">
+      <div class="alert alert-dismissible alert-warning col-lg-6">
+        <strong><%= pluralize(@developer.errors.count, "error") %> prohibited this developer from being saved:</strong>
+
+        <ul>
+          <% @developer.errors.full_messages.each do |message| %>
+            <li><%= message %></l1>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
   <%= form_for @developer do |f| %>
     <form class="form-horizontal">
       <fieldset>

@@ -38,7 +38,14 @@
   padding-top: 100px;
 }
 
-.form-container, .aligned-legend {
+.form-container {
   margin-top: 40px;
   margin-left: 400px;
+  width: 850px;
+}
+
+.aligned-legend {
+  margin-top: 40px;
+  margin-left: 400px;
+  width: 300px;
 }

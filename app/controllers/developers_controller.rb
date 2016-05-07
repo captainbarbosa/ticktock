@@ -18,8 +18,15 @@ class DevelopersController < ApplicationController
   end
 
   def create
-    @developer = Developer.create!(developer_params)
-    redirect_to root_path, notice: "Developer added"
+    @developer = Developer.new(developer_params)
+
+    respond_to do |format|
+      if @developer.save
+        format.html { redirect_to root_path, notice: "Developer added!" }
+      else
+        format.html { render :new }
+      end
+    end
   end
 
   def edit
