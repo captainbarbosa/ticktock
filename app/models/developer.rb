@@ -26,7 +26,7 @@ class Developer < ActiveRecord::Base
   end
 
   def overtime?
-    true unless self.weekly_hours < 40
+    true if self.weekly_hours > 40
   end
 
   def overtime_by
