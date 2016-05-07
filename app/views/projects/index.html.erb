@@ -1,13 +1,42 @@
-<h1>Project</h1>
+<h1 class="centered-headline">Projects</h1>
 
-<%= link_to "New Project", new_project_path %>
-<br>
-<% @projects.each do |project| %>
-  <%= project.id %>
-  <%= project.name %>
-  <%= project.hours_worked %>
-  Overtime? <%= project.overtime? %>
-  <%= link_to "Edit", edit_project_path(project) %>
-  <%= link_to "Delete", project, method: :delete unless project.no_time_entries? %>
-  <br>
-<% end %>
+<a href="/projects/new" class="btn btn-success col-sm-offset-5 col-sm-2 text-center">Add Project</a>
+
+<div class="index-table-container">
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        <th class="col-md-2">Project</th>
+        <th class="col-md-2">Hours Worked</th>
+        <th class="col-md-2">Allowed Hours</th>
+        <th class="col-md-2"> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @projects.each do |project| %>
+        <% if project.overtime? %>
+          <tr class="warning" data-toggle="tooltip" title="Exceeded hours on this project">
+        <% else %>
+          <tr>
+        <% end %>
+          <td class="table-cell"><%= project.name %></td>
+          <td class="table-cell"><%= project.hours_worked %></td>
+          <td class="table-cell"><%= project.max_allowed_hours %></td>
+          <td>
+            <ul class="nav">
+              <li class="dropdown">
+                <a class="dropdown-toggle dropdown-link" id="button" data-toggle="dropdown" href="#" aria-expanded="false">
+                  Actions <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#"><%= link_to "Edit", edit_project_path(project) %></a></li>
+                  <li><a href="#"><%= link_to "Delete", project, method: :delete unless project.no_time_entries? %></a></li>
+                </ul>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

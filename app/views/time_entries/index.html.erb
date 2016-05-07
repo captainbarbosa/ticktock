@@ -1,11 +1,40 @@
-<h1>Time Entries</h1>
+<h1 class="centered-headline">Time Entries</h1>
 
-<%= link_to "Add time entry", new_time_entry_path %>
-<br>
-<% @time_entries.each do |time_entry| %>
-  <%= time_entry.id %>
-  <%= time_entry.subject %>
-  <%= link_to "Edit", edit_time_entry_path(time_entry) %>
-  <%= link_to "Delete", time_entry, method: :delete %>
-  <br>
-<% end %>
+<a href="/projects/new" class="btn btn-success col-sm-offset-5 col-sm-2 text-center">Add Time Entry</a>
+
+<div class="index-table-container">
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        <th class="col-md-2">Task</th>
+        <th class="col-md-2">Duration</th>
+        <th class="col-md-2">Project</th>
+        <th class="col-md-3">Entered On</th>
+        <th class="col-md-2"> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @time_entries.each do |time_entry| %>
+          <tr>
+          <td class="table-cell"><%= time_entry.subject %></td>
+          <td class="table-cell"><%= pluralize(time_entry.duration, 'hour')%></td>
+          <td class="table-cell"><%= time_entry.project.name %></td>
+          <td class="table-cell"><%= time_entry.created_at.strftime("%m/%d/%y, %I:%M %p") %></td>
+          <td>
+            <ul class="nav">
+              <li class="dropdown">
+                <a class="dropdown-toggle dropdown-link" id="button" data-toggle="dropdown" href="#" aria-expanded="false">
+                  Actions <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#"><%= link_to "Edit", edit_time_entry_path(time_entry) %></a></li>
+                  <li><a href="#"><%= link_to "Delete", time_entry, method: :delete %></a></li>
+                </ul>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
