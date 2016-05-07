@@ -8,23 +8,38 @@
     </ul>
 <% end %>
 
-<%= form_for @time_entry do |f| %>
-  <%= f.label :subject %>
-  <%= f.text_field :subject %>
+<div class="form-container">
+    <%= form_for @time_entry do |f| %>
+    <form class="form-horizontal">
+      <fieldset>
 
-  <%= f.label :project %><br>
-      <%= f.select(
-        :project_id,
-        options_from_collection_for_select(
-        Project.all,
-        :id,
-        :name
-        ),
-        {}
-      ) %>
+        <div class="row">
+          <div class="form-group col-lg-6">
+            <%= f.label :subject, class: "col-lg-6 control-label" %>
+            <%= f.text_field :subject, class: "form-control" %>
+          </div>
+        </div>
 
- <%= f.hidden_field :developer_id %>
+        <div class="row">
+          <div class="form-group col-lg-6">
+            <%= f.label :project %><br>
+                <%= f.select(
+                  :project_id,
+                  options_from_collection_for_select(
+                  Project.all,
+                  :id,
+                  :name
+                  ),
+                  {},
+                  {class: "form-control"}
+                ) %>
+          </div>
+        </div>
 
- <%= f.submit %>
+       <%= f.hidden_field :developer_id %>
 
-<% end %>
+       <%= f.submit class: "btn btn-primary" %>
+      </fieldset>
+    </form>
+  <% end %>
+</div>

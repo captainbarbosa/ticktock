@@ -1,11 +1,29 @@
-<%= link_to "Click here to sign up", signup_path %>
+<h2 class="authentication-headline" id="login-header">Log In</h1>
+<%= link_to "(or sign up!)", signup_path, class: "authentication-headline" %>
 
-<%= form_tag login_path do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+<div class="form-container">
+  <%= form_tag login_path do %>
+    <form class="form-horizontal">
+      <fieldset>
 
-  <%= submit_tag %>
-<% end %>
+        <div class="row">
+          <div class="form-group col-lg-6">
+            <%= label_tag :email, "Email", { class: 'col-lg-6 control-label' } %>
+            <%= text_field_tag :email, "", :class => "form-control" %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-lg-6">
+            <%= label_tag :password, "Password", { class: 'col-lg-6 control-label' } %>
+            <%= password_field_tag :password, "", :class => "form-control" %>
+          </div>
+        </div>
+
+        <%= submit_tag "Log In", :class => "btn btn-primary" %>
+
+      </fieldset>
+    </form>
+  <% end %>
+</div>

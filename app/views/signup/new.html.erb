@@ -1,16 +1,31 @@
-<h2>Sign Up</h2>
+<h2 class="authentication-headline">Sign Up</h2>
 
-<%= form_for @developer, url: signup_path do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+<div class="form-container">
+  <%= form_for @developer, url: signup_path do |f| %>
+  <form class="form-horizontal">
+    <fieldset>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+      <div class="row">
+        <div class="form-group col-lg-6">
+          <%= f.label :email, class: "col-lg-6 control-label" %>
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="form-group col-lg-6">
+          <%= f.label :password, class: "col-lg-6 control-label" %>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+      </div>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+      <div class="row">
+        <div class="form-group col-lg-6">
+          <%= f.label :password_confirmation, class: "col-lg-6 control-label" %>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+      </div>
 
-
-  <%= f.submit "Sign up" %>
-<% end %>
+    <%= f.submit "Create Account", class: "btn btn-primary" %>
+  <% end %>
+</div>

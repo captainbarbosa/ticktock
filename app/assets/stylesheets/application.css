@@ -21,10 +21,24 @@
 .centered-headline {
   text-align: center;
   padding: 20px 0px;
+
+}
+
+.authentication-headline {
+  margin-left: 400px;
+}
+
+#login-header {
+  margin-top: 40px;
 }
 
 .index-table-container {
   width: 60%;
   margin: auto;
   padding-top: 100px;
+}
+
+.form-container, .aligned-legend {
+  margin-top: 40px;
+  margin-left: 400px;
 }
