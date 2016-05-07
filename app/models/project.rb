@@ -4,7 +4,11 @@ class Project < ActiveRecord::Base
   validates :name, :max_allowed_hours, presence: true
 
   def overtime?
-    true unless self.hours_worked > self.max_allowed_hours
+    if self.hours_worked.nil?
+      false
+    else
+      true unless self.hours_worked > self.max_allowed_hours
+    end
   end
 
   def no_time_entries?
