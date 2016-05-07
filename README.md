@@ -15,7 +15,13 @@ You can log in with the following account to see mocked data:
 `Email: richard@piedpiper.com`
 `Password: password`
 
-### Screenshots
-![screenshot](/public/assets/images/projects.png?raw=true "Projects")
-![screenshot](/public/assets/images/time_entries.png?raw=true "Time Entries")
+### Screenshots    
+&nbsp;    
+Projects Page
+![screenshot](/public/assets/images/projects.png?raw=true "Projects")    
+&nbsp;    
+Time Entries Page
+![screenshot](/public/assets/images/time_entries.png?raw=true "Time Entries")    
+&nbsp;    
+Developers Page
 ![screenshot](/public/assets/images/developers.png?raw=true "Developers")
