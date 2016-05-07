@@ -1,9 +1,38 @@
 <h2 class="authentication-headline">Sign Up</h2>
 
 <div class="form-container">
+
+  <% if @developer.errors.any? %>
+    <div class="row">
+      <div class="alert alert-dismissible alert-warning col-lg-6">
+        <strong><%= pluralize(@developer.errors.count, "error") %> prohibited account creation:</strong>
+
+        <ul>
+          <% @developer.errors.full_messages.each do |message| %>
+            <li><%= message %></l1>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
   <%= form_for @developer, url: signup_path do |f| %>
   <form class="form-horizontal">
     <fieldset>
+      
+      <div class="row">
+        <div class="form-group col-lg-6">
+          <%= f.label :first_name, class: "col-lg-6 control-label" %>
+          <%= f.text_field :first_name, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-lg-6">
+          <%= f.label :last_name, class: "col-lg-6 control-label" %>
+          <%= f.text_field :last_name, class: "form-control" %>
+        </div>
+      </div>
 
       <div class="row">
         <div class="form-group col-lg-6">
