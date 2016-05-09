@@ -32,7 +32,7 @@ class DevelopersController < ApplicationController
   def update
     @developer = Developer.find(params[:id])
     @developer.update(developer_params)
-    redirect_to developer_path(@developer), notice: "Developer updated"
+    redirect_to developers_path, notice: "Developer updated"
   end
 
   def destroy
