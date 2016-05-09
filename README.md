@@ -7,6 +7,7 @@ Created as an assignment while at The Iron Yard.
 ### Try it
 
 Download the repository and run the following commands:
+* `rake db:create`
 * `rake db:migrate`
 * `rake db:seed`
 * `rails s`
