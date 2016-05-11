@@ -2,9 +2,11 @@
 
 A time tracking application that allows developers to add projects and their time entries.
 
-Created as an assignment while at The Iron Yard.
+Created as an assignment while at The Iron Yard.    
 
-### Try it
+[See it live.](https://warm-chamber-58839.herokuapp.com/)
+
+### Try it locally
 
 Download the repository and run the following commands:
 * `rake db:create`
